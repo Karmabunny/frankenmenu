@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>frankenMenu | All-in-one responsive website navigation system</title>
+
+    <link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" href="images/favicon/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="images/favicon/favicon-16x16.png" sizes="16x16">
+    <link rel="manifest" href="images/favicon/manifest.json">
+    <link rel="mask-icon" href="images/favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="theme-color" content="#ffffff">
+
+    <link href="css/normalize.css" rel="stylesheet">
+    <link href="css/global.css" rel="stylesheet">
+    <link href="css/flexboxgrid.css" rel="stylesheet">
+    <link href="css/frankenmenu.css" rel="stylesheet">
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="js/frankenmenu.js"></script>
+    <script src="js/frankenmenu-init.js"></script>
+
+    <!-- Typekit -->
+    <script src="https://use.typekit.net/cmb4uxw.js"></script>
+    <script>try{Typekit.load({ async: false });}catch(e){}</script>
+
+</head>
+
+<body>
+
+    <a class="-vis-hidden" href="#banner">Skip to Content</a>
+
+    <div id="mobile-header">
+        <div class="container">
+            <button type="button" id="mobile-menu-button">
+                <span class="-vis-hidden">Toggle menu</span>
+                <span class="mobile-menu-button-top"></span>
+                <span class="mobile-menu-button-middle"></span>
+                <span class="mobile-menu-button-bottom"></span>
+            </button>
+        </div>
+    </div>
+
+    <div id="wrap">
+
+        <header id="header">
+
+            <div class="section section--header bg-red">
+
+                <div class="container">
+
+                    <div class="header__logo">
+
+                        <a href="/">
+
+                            <h1>frankenMenu</h1>
+
+                        </a>
+
+                        <p class="header__logo__blurb">An all-in-one responsive website navigation system</p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="section section--nav bg-black">
+
+                <nav id="frankenmenu">
+
+                    <div class="container">
+
+                        <ul id="frankenmenu-list">
+                            <li class="menu-item menu-item-depth1 menu-home-page menu-current-item">
+                                <a href="/">Home</a>
+                            </li>
+                            <li class="menu-item menu-item-depth1 menu-item-has-children">
+                                <a href="/" class="menu-item-link-with-submenu">Demos</a>
+                                <ul class="sub-menu sub-menu-depth1">
+                                    <li class="menu-item menu-item-depth2">
+                                        <a href="/">Dropdown</a>
+                                    </li>
+                                    <li class="menu-item menu-item-depth2">
+                                        <a href="/">Megamenu</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="menu-item menu-item-depth1">
+                                <a href="/">GitHub</a>
+                            </li>
+                            <li class="menu-item menu-item-depth1">
+                                <a href="/">Download</a>
+                            </li>
+                        </ul>
+
+                    </div>
+
+                </nav>
+
+            </div>
+
+        </header>
+
+
+
+        <div class="section section--content bg-white">
+            <div class="container">
+
+                <div class="row reverse">
+                    <div class="col-xs-9">
+
+                        <main class="mainbar">
+
+                            <h2 id="getting-started">Getting started</h2>
+
+                            <h3>Step 1: Setup your HTML</h3>
+<pre>
+&lt;body>
+
+    &lt;div id="mobile-header"&gt;
+        &lt;div class="container"&gt;
+            &lt;button type="button" id="mobile-menu-button"&gt;Toggle menu&lt;/button&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;div id="wrap"&gt;
+
+        &lt;nav id="frankenmenu"&gt; ... &lt;/nav&gt;
+
+        // The rest of your document goes inside this wrap
+
+    &lt;/div&gt;
+
+&lt;/body&gt;</pre>
+
+
+                           <h3>Step 2: Build the navigation</h3>
+
+<pre>
+&lt;nav id="frankenmenu"&gt;
+
+    &lt;div class="container"&gt;
+
+        &lt;ul id="frankenmenu-list"&gt;
+            &lt;li class="menu-item menu-item-depth1"&gt;&lt;a href="#"&gt;Home&lt;/a&gt;&lt;/li&gt;
+            &lt;li class="menu-item menu-item-depth1 menu-item-has-children"&gt;
+                &lt;a href="#"&gt;About us&lt;/a&gt;
+            &lt;ul class="sub-menu sub-menu-depth1"&gt;
+                &lt;li class="menu-item menu-item-depth2"&gt;&lt;a href="#"&gt;Your mum&lt;/a&gt;&lt;/li&gt;
+                &lt;li class="menu-item menu-item-depth2"&gt;&lt;a href="#"&gt;My mum&lt;/a&gt;&lt;/li&gt;
+                &lt;li class="menu-item menu-item-depth2"&gt;&lt;a href="#"&gt;Your mum's mum&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+            &lt;/li&gt;
+            &lt;li class="menu-item menu-item-depth1 menu-item-has-children"&gt;
+                &lt;a href="#"&gt;Products&lt;/a&gt;
+            &lt;ul class="sub-menu sub-menu-depth1"&gt;
+                &lt;li class="menu-item menu-item-depth2"&gt;&lt;a href="#"&gt;Sandwiches&lt;/a&gt;&lt;/li&gt;
+                &lt;li class="menu-item menu-item-depth2"&gt;&lt;a href="#"&gt;Hotdogs&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+            &lt;/li&gt;
+            &lt;li class="menu-item menu-item-depth1"&gt;&lt;a href="#"&gt;Services&lt;/a&gt;&lt;/li&gt;
+            &lt;li class="menu-item menu-item-depth1"&gt;&lt;a href="#"&gt;Contact us&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+
+    &lt;/div&gt;
+
+&lt;/nav&gt;</pre>
+
+                            <h3>Step 3: Include files</h3>
+                            <p><a href="#">Download FrankenMenu</a> and include the files in your document. Don't forget to include a copy of <a href="#">jQuery</a> 1.9.1+.</p>
+
+<pre>
+&lt;link rel="stylesheet" href="frankenmenu.css"&gt;
+
+&lt;script src="frankenmenu.js"&gt;</script></pre>
+
+                            <h3>Step 4: Initialise</h3>
+                            <p>Initialise FrankenMenu on document ready</p>
+
+<pre>
+$(document).ready(function() {
+    $("#frankenmenu").frankenMenu();
+});</pre>
+
+
+                            <h2 id="options">Options</h2>
+
+                            <p>You can customise FrankenMenu by using options. For example:</p>
+
+<pre>
+$("#frankenmenu").frankenMenu({
+    menuBreakpoint: 450,
+    megaMenu: true,
+    mobileMenuText: true,
+    mobileMenuPosition: "left",
+});</pre>
+
+                            <table class="table--content-standard">
+                                <tr>
+                                    <th>Option</th>
+                                    <th>Description</th>
+                                    <th>Type</th>
+                                    <th>Default</th>
+                                    <th>Values</th>
+                                </tr>
+                                <tr>
+                                    <td>menuBreakpoint</td>
+                                    <td>The max-width in px that the mobile menu will be active</td>
+                                    <td>Number</td>
+                                    <td>600</td>
+                                    <td>Any number</td>
+                                </tr>
+                                <tr>
+                                    <td>devMode</td>
+                                    <td>Enables developer mode. With a submenu or megamenu open, you can press the "h" key to hold it's active state. The "r" key releases it again. Useful for inspecting or debugging</td>
+                                    <td>Boolean</td>
+                                    <td>false</td>
+                                    <td>true/false</td>
+                                </tr>
+                                <tr>
+                                    <th colspan="5">Desktop menu options</th>
+                                </tr>
+                                <tr>
+                                    <td>megaMenu</td>
+                                    <td>Activate megamenu functionality</td>
+                                    <td>Boolean</td>
+                                    <td>false</td>
+                                    <td>true/false</td>
+                                </tr>
+                                <tr>
+                                    <td>desktopHoverDelay</td>
+                                    <td>The delay in ms before a submenu or megamenu dropdown will close after focus leaves a menu item</td>
+                                    <td>Number</td>
+                                    <td>800</td>
+                                    <td>Any number</td>
+                                </tr>
+                                <tr>
+                                    <td>desktopAnimationIn</td>
+                                    <td>An object equivalent to first parameter of jQuery’s .animate() method. Used to animate in submenu or megamenu dropdowns</td>
+                                    <td>Object</td>
+                                    <td>{opacity:'show'}</td>
+                                    <td>jQuery animation object</td>
+                                </tr>
+                                <tr>
+                                    <td>desktopAnimationOut</td>
+                                    <td>An object equivalent to first parameter of jQuery’s .animate() method. Used to animate out submenu or megamenu dropdowns</td>
+                                    <td>Object</td>
+                                    <td>{opacity:'hide'}</td>
+                                    <td>jQuery animation object</td>
+                                </tr>
+                                <tr>
+                                    <td>desktopTransitionSpeedIn</td>
+                                    <td>The transition speed in ms that a submenu or megamenu dropdown will transition in</td>
+                                    <td>Number</td>
+                                    <td>300</td>
+                                    <td>Any number</td>
+                                </tr>
+                                <tr>
+                                    <td>desktopTransitionSpeedOut</td>
+                                    <td>The transition speed in ms that a submenu or megamenu dropdown will transition out</td>
+                                    <td>Number</td>
+                                    <td>200</td>
+                                    <td>Any number</td>
+                                </tr>
+                                <tr>
+                                    <th colspan="5">Mobile menu options</th>
+                                </tr>
+                                <tr>
+                                    <td>mobileMenuText</td>
+                                    <td>Show a "Menu" label next to the mobile menu toggle button</td>
+                                    <td>Boolean</td>
+                                    <td>false</td>
+                                    <td>true/false</td>
+                                </tr>
+                                <tr>
+                                    <td>mobileMenuPosition</td>
+                                    <td>Position the mobile menu on the left or right of the screen</td>
+                                    <td>String</td>
+                                    <td>"right"</td>
+                                    <td>"left" or "right"</td>
+                                </tr>
+                                <tr>
+                                    <td>mobileTransitionSpeedIn</td>
+                                    <td>The transition speed in ms that mobile submenus will slide down</td>
+                                    <td>Number</td>
+                                    <td>300</td>
+                                    <td>Any number</td>
+                                </tr>
+                                <tr>
+                                    <td>mobileTransitionSpeedIn</td>
+                                    <td>The transition speed in ms that mobile submenus will slide up</td>
+                                    <td>Number</td>
+                                    <td>300</td>
+                                    <td>Any number</td>
+                                </tr>
+
+                            </table>
+
+                            <h2 id="sub-navigation">Sub-navigation</h2>
+                            <p>On desktop menus, you can display top-level menu items in a separate sub-navigation list by adding the class <strong>menu-item-subnav</strong>.</p>
+                            <p>For example:</p>
+
+<pre>
+&lt;li class="menu-item menu-item-depth1 menu-item-subnav"&gt; ... &lt;/li&gt;</pre>
+
+                            <p>On desktop, these menu items will be cloned into an element with an id of <strong>frankenmenu-subnav</strong> in the same order they appear in the menu. Semantically this element should be a <code>&lt;nav&gt;</code> unless you are placing the sub-navigation inside the current <code>&lt;nav&gt;</code>. You need to place this element in the DOM yourself if you would like to use this feature.</p>
+                            <p>For example:</p>
+
+<pre>
+&lt;nav id="frankenmenu-subnav"&gt;&lt;/nav&gt;
+// or
+&lt;div id="frankenmenu-subnav"&gt;&lt;/div&gt;</pre>
+
+                            <p>You can place this container element anywhere you want the sub-navigation to appear.</p>
+                            <p>On mobile menu, these menu items will not be affected.</p>
+                            <p>Submenu and megamenu dropdowns on these items are not supported so it's best to not give sub-navigation items any children.</p>
+
+                            <h2 id="mobile-menu-bar">Mobile menu bar</h2>
+                            <p>You can add your own elements into the mobile menu bar if they are mobile-specific.</p>
+                            <p>Another option would be to clone existing elements inside of it by adding the class <strong>frankenmove</strong>.</p>
+                            <p>A good use-case for this could be a logo. For example:</p>
+
+<pre>
+&lt;div id="logo" class="frankenmove"&gt;
+    &lt;a href="/"&gt;&lt;img src="images/your-logo.svg" alt="A logo"&gt;&lt;/a&gt;
+&lt;/div&gt;</pre>
+
+                            <p>The logo will be cloned into the <strong>mobile-header</strong> div, with the class <strong>frankenmoved</strong>.</p>
+                            <p>Elements with the class <strong>frankenmove</strong> are hidden on mobile menu view, and elements with the added class <strong>frankenmoved</strong> are hidden on desktop menu view.</p>
+
+                        </main>
+                    </div>
+                    <div class="col-xs-3">
+                        <div class="sidebar">
+                            <ul class="block-list">
+                                <li><a href="#getting-started">Getting started</a></li>
+                                <li><a href="#options">Options</a></li>
+                                <li><a href="#sub-navigation">Sub-navigation</a></li>
+                                <li><a href="#mobile-menu-bar">Mobile menu bar</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <footer id="footer">
+
+            <div class="section section--small section--bottom-footer bg-red">
+                <div class="container">
+                    <p class="footer__text"><a href="http://karmabunny.com.au" target="_blank">A Karmabunny project</a></p>
+                </div>
+            </div>
+
+        </footer>
+
+    </div>
+
+
+</body>
+</html>
